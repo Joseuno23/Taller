@@ -16,5 +16,24 @@ class C_Login extends Controller {
     function Login(){
         echo json_encode(array("res" => $this->M_Login->Validar_User()));
     }
+    
+    function LoginToGoogle(){
+        $this->load->library('Googleplus');
+        
+        if (isset($_GET['code'])) {
+            
+            $this->googleplus->getAuthenticate();
+
+            $validate = $this->M_Main->Validar_User($this->googleplus->getUserInfo());
+
+            if($validate == "OK"){
+                header('Location: ' . base_url()."C_Panel");
+            }else{
+                header('Location: ' . base_url());
+            }
+        }else{
+            echo "nada papá";
+        }
+    }
    
 }
