@@ -13,6 +13,8 @@ class C_Login extends Controller {
         $this->load->view('V_Index',$data);
     }
     
-    
+    function Login(){
+        echo json_encode(array("res" => $this->M_Login->Validar_User()));
+    }
    
 }
