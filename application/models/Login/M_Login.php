@@ -65,10 +65,6 @@ class M_Login extends VS_Model {
                         'Skin' => $reg->skin,
                         'Layout' => $reg->layout,
                         'Sidebar' => $reg->sidebar,
-                        'count_time' => $rsTime,
-                        'ip' => $reg->ip,
-                        'mac' => $reg->mac_address,
-                        'Google' => ($data) ? true : false
                     );
 
                     $this->session->set_userdata($newdata);
