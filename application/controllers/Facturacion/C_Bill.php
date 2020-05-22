@@ -5,6 +5,7 @@ class C_Bill extends Controller {
         
     public function __construct() { 
         parent::__construct();
+		$this->load->model('Facturacion/M_Bill');
     }
 
     public function index(){
