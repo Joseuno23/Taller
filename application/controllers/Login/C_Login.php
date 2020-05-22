@@ -5,6 +5,7 @@ class C_Login extends Controller {
         
     public function __construct() { 
         parent::__construct();
+        $this->load->model('Login/M_Login');
     }
 
     public function index(){
