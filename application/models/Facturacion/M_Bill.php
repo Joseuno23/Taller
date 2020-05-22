@@ -19,4 +19,18 @@ class M_Bill extends VS_Model {
        
         return $result->result();
     }
+	
+	function GetCategorias($id = false) {
+
+        if ($id)
+            $this->db->where('id_categoria', $id);
+
+        $result = $this->db->select('*')
+                ->from('sys_categoria')
+                ->like('tipo', 'P')
+                ->order_by('descripcion')
+                ->get();
+
+        return $result->result();
+    }
 }
