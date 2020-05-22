@@ -53,5 +53,10 @@ class C_Login extends Controller {
         }
         echo $res;     
     }
+    
+    function Logout(){
+        $this->session->sess_destroy();
+        header('Location: ' . base_url());
+    }
    
 }
